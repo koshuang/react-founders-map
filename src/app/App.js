@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 export default class App extends React.Component {
   static propTypes = {
@@ -15,9 +17,11 @@ export default class App extends React.Component {
 
     return (
       <Provider store={store}>
-        <div style={{ height: '100%' }}>
-          <Router history={history} children={routes} key={routerKey} />
-        </div>
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <div style={{ height: '100%' }}>
+            <Router history={history} children={routes} key={routerKey} />
+          </div>
+        </MuiThemeProvider>
       </Provider>
     )
   }

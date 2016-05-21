@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import userActions from './userActions'
 import { UserPropType } from './userPropTypes'
+import RaisedButton from 'material-ui/RaisedButton'
 
 class User extends Component {
   componentDidMount() {
