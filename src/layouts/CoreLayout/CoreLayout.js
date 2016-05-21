@@ -12,7 +12,7 @@ class CoreLayout extends Component {
     const { children } = this.props
 
     return (
-      <div className="container text-center">
+      <div>
         <Header />
         <div className={classes.mainContainer}>
           {children}

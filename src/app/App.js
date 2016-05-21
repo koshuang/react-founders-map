@@ -3,6 +3,9 @@ import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+
+const muiTheme = getMuiTheme(darkBaseTheme)
 
 class App extends Component {
   static propTypes = {
@@ -17,7 +20,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <div style={{ height: '100%' }}>
             <Router history={history} children={routes} key={routerKey} />
           </div>
